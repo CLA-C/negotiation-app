@@ -14,12 +14,12 @@ function Tabs({
     return (
         <div className="tabs">
             <button
-                className={`tabs__employer${activeUser === 'employer' && '--isActive'}`}
+                className={`tabs__employer${activeUser === 'employer' ? '--isActive' : ''}`}
                 onClick={() => handleClick('employer')}>
                 Employer
             </button>
             <button
-                className={`tabs__employee${activeUser === 'employee' && '--isActive'}`}
+                className={`tabs__employee${activeUser === 'employee' ? '--isActive' : ''}`}
                 onClick={() => handleClick('employee')}>
                 Employee
             </button>
@@ -28,7 +28,6 @@ function Tabs({
 }
 
 export default Tabs
-
 Tabs.propTypes = {
     activeUser: PropTypes.oneOf(['employer', 'employee']).isRequired,
     setActiveUser: PropTypes.func.isRequired

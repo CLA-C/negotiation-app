@@ -1,4 +1,4 @@
-import { reducer, initialState } from '../../state/state';
+import { reducer, initialState } from '../../state/state'
 
 describe('App reducer', () => {
     it('should update the employer proposal', () => {
