@@ -6,12 +6,13 @@ import {
     resetApp
 } from '../state/actions'
 
+import { Card, CardHeader, CardFooter, CardBody } from 'reactstrap'
 import useCityWeather from '../hooks/useCityWeather'
 import Tabs from '../tabs/Tabs'
 import ProposalForm from '../proposalForm/ProposalForm'
 import ResultModal from '../resultModal/ResultModal'
 
-import './App.css'
+import './App.scss'
 
 function App() {
 	const [state, dispatch] = useReducer(reducer, initialState)
@@ -30,20 +31,22 @@ function App() {
 
 	return (
 		<div className="navigation-app">
-			<Tabs
-				activeUser={activeUser}
-				setActiveUser={(value) => setActiveUser(value, dispatch)}/>
-
-			<ProposalForm
-				activeUser={activeUser}
-				hideInput={hideInput}
-				showModal={showModal}
-				setCurrentUserProposal={(value) => setCurrentUserProposal(value, dispatch)}
-			/>
-
-			<div>Active user is: {activeUser}</div>
-			<div>Current employer proposal is: {employerProposal}</div>
-			<div>Current employee proposal is: {employeeProposal}</div>
+			<Card>
+				<CardHeader>
+					<Tabs
+						activeUser={activeUser}
+						setActiveUser={(value) => setActiveUser(value, dispatch)}/>
+				</CardHeader>
+				<CardBody>
+					<ProposalForm
+						activeUser={activeUser}
+						hideInput={hideInput}
+						showModal={showModal}
+						setCurrentUserProposal={(value) => setCurrentUserProposal(value, dispatch)}
+					/>
+				</CardBody>
+				<CardFooter color="info">Claudio's Negotiation App©</CardFooter>
+			</Card>
 
 			{showModal &&
 				<ResultModal

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import cityWeatherShape from './cityWeatherShape'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 
+import './ResultModal.scss'
 function ResultModal({
     employerProposal,
     employeeProposal,

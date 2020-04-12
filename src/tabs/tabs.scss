@@ -1,0 +1,46 @@
+$employer-color: #6610f2;
+$employee-color: #20c997;
+
+.tabs {
+    display: flex;
+
+    &__employer,
+    &__employee {
+        flex: 1;
+    }
+
+    &__employer {
+        margin-right: 15px;
+        
+        &.btn-outline-secondary {
+            border-color: $employer-color;
+            color: $employer-color;
+        }
+
+        &:hover,
+        &--isActive {
+
+            &.btn-outline-secondary {
+                color: white;
+                background-color: $employer-color;
+            }            
+        }
+    }
+
+    &__employee {
+
+        &.btn-outline-secondary {
+            border-color: $employee-color;
+            color: $employee-color;
+        }
+
+        &:hover,
+        &--isActive {
+
+            &.btn-outline-secondary {
+                color: white;
+                background-color: $employee-color;
+            }            
+        }
+    }
+}

@@ -1,5 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Button } from 'reactstrap'
+
+import './Tabs.scss'
 
 function Tabs({
     activeUser,
@@ -13,16 +16,18 @@ function Tabs({
 
     return (
         <div className="tabs">
-            <button
-                className={`tabs__employer${activeUser === 'employer' ? '--isActive' : ''}`}
+            <Button
+                outline
+                className={`tabs__employer ${activeUser === 'employer' ? 'tabs__employer--isActive' : ''}`}
                 onClick={() => handleClick('employer')}>
                 Employer
-            </button>
-            <button
-                className={`tabs__employee${activeUser === 'employee' ? '--isActive' : ''}`}
+            </Button>
+            <Button
+                outline
+                className={`tabs__employee ${activeUser === 'employee' ? 'tabs__employee--isActive' : ''}`}
                 onClick={() => handleClick('employee')}>
                 Employee
-            </button>
+            </Button>
         </div>
     )
 }

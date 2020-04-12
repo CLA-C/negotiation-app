@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import App from './app/App'
 
 import 'bootstrap/dist/css/bootstrap.css'
-import './index.css'
+import './index.scss'
 
 ReactDOM.render(
 	<App />,

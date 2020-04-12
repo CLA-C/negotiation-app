@@ -1,5 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+import { Button } from 'reactstrap'
 import Tabs from '../../tabs/Tabs'
 
 describe('<Tabs />', () => {
@@ -11,15 +12,15 @@ describe('<Tabs />', () => {
     const wrapper = shallow(<Tabs {...initialProps}/>)
 
     it('renders two buttons', () => {
-        expect(wrapper.find('button')).toHaveLength(2)
+        expect(wrapper.find(Button)).toHaveLength(2)
     })
 
     it('sets the correct active button', () => {
-        expect(wrapper.find('button').at(1).hasClass('tabs__employee--isActive')).toBe(true)
+        expect(wrapper.find(Button).at(1).hasClass('tabs__employee--isActive')).toBe(true)
     })
 
     it('calls the click event with the correct value', () => {
-        wrapper.find('button').at(0).simulate('click')
+        wrapper.find(Button).at(0).simulate('click')
         expect(initialProps.setActiveUser).toHaveBeenCalledWith('employer')
     })
 })

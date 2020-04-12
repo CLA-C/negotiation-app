@@ -1,0 +1,24 @@
+.result-modal {
+
+    &--success {
+
+        .modal-header {
+            color: white;
+            background-color: #28a745;
+        }
+    }
+
+    &--failure {
+
+        .modal-header {
+            color: white;
+            background-color: #dc3545;
+        }
+    }
+
+    &__weather-info {
+        font-weight: 200;
+        font-style: italic;
+        margin-right: 15px;
+    }    
+}

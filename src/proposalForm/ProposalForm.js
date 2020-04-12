@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
+import { Input, Button } from 'reactstrap'
 import isValidInput from './validation'
+
+import './ProposalForm.scss'
 
 function ProposalForm({
     activeUser,
@@ -37,7 +40,8 @@ function ProposalForm({
                 <>  
                     <p>{callToActionText}</p>
                     <div>
-                        <input
+                        <Input
+                            invalid={showError}
                             type="text"
                             maxLength="9"
                             name="proposal"
@@ -46,14 +50,17 @@ function ProposalForm({
                     </div>
 
                     {showError &&
-                        <div className="proposal-form__error-msg">
+                        <div className="proposal-form__error-msg text-danger">
                             Please insert a positive number
                         </div>
                     }
                     
-                    <button onClick={handleSubmit}>
+                    <Button
+                        color="primary"
+                        className="proposal-form__submit-btn"
+                        onClick={handleSubmit}>
                         Submit
-                    </button>
+                    </Button>
                 </>
             }
         </div>
