@@ -10,7 +10,7 @@
 
 ## Available Scripts
 
-Run `npm-install` in the same folder of the `package.json` file to install all dependencies. Then, in the project directory, you can run (`yarn` commands work too):
+Run `npm-install` in the same folder of the `package.json` file to install all dependencies. Then, in the project directory, you can run:
 
 ### `npm start`
 
