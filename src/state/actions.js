@@ -1,13 +1,6 @@
-const setEmployerProposal = (value, dispatch) => {
+const setCurrentUserProposal = (value, dispatch) => {
     return dispatch({
-        type: 'setEmployerProposal',
-        value
-    })
-}
-
-const setEmployeeProposal = (value, dispatch) => {
-    return dispatch({
-        type: 'setEmployeeProposal',
+        type: 'setCurrentUserProposal',
         value
     })
 }
@@ -26,8 +19,7 @@ const resetApp = (dispatch) => {
 }
 
 export {
-    setEmployerProposal,
-    setEmployeeProposal,
+    setCurrentUserProposal,
     setActiveUser,
     resetApp
 }

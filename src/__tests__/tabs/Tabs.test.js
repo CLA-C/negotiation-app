@@ -1,7 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Tabs from '../../tabs/Tabs'
-import { setActiveUser } from '../../state/actions'
 
 describe('<Tabs />', () => {
     const initialProps = {

@@ -1,34 +1,35 @@
 import { reducer, initialState } from '../../state/state'
 
 describe('App reducer', () => {
-    it('should update the employer proposal', () => {
+    it('should update the active user proposal', () => {
         const currentState = {
             ...initialState,
-            employerProposal: 5000,
+            activeUser: 'employee',
+            employeeProposal: 4000
         }
 
         const newState = reducer(currentState, {
-            type: 'setEmployerProposal',
-            value: 3500
-        })
-
-        expect(newState.employerProposal).toBe(3500)
-        expect(newState.employeeProposal).toBe(null)
-    })
-
-    it('should update the employee proposal', () => {
-        const currentState = {
-            ...initialState,
-            employeeProposal: 4000,
-        }
-
-        const newState = reducer(currentState, {
-            type: 'setEmployeeProposal',
+            type: 'setCurrentUserProposal',
             value: 8354
         })
 
         expect(newState.employeeProposal).toBe(8354)
         expect(newState.employerProposal).toBe(null)
+
+        const anotherCurrentState = {
+            ...initialState,
+            activeUser: 'employer',
+            employerProposal: null,
+            employeeProposal: 34
+        }
+
+        const anotherNewState = reducer(anotherCurrentState, {
+            type: 'setCurrentUserProposal',
+            value: '4'
+        })
+
+        expect(anotherNewState.employerProposal).toBe(4)
+        expect(anotherNewState.employeeProposal).toBe(34)
     })
 
     it('should set the active user', () => {
@@ -56,13 +57,13 @@ describe('App reducer', () => {
             value: 'janitor'
         })
 
-        const otherNewState = reducer(currentState, {
+        const anotherNewState = reducer(currentState, {
             type: 'setActiveUser',
             value: null
         })
 
         expect(newState.activeUser).toBe('employer')
-        expect(otherNewState.activeUser).toBe('employer')
+        expect(anotherNewState.activeUser).toBe('employer')
     })
 
     it('should reset the app state', () => {
@@ -79,7 +80,7 @@ describe('App reducer', () => {
         expect(newState).toEqual(initialState)
     })
 
-    it('should return the current unmodified state if unnknown action', () => {
+    it('should return the current unmodified state if an unknown action is passed', () => {
         const currentState = {
             employerProposal: 5000,
             employeeProposal: 4000,

@@ -8,15 +8,10 @@ const reducer = (state, action) => {
     switch (action.type) {
         case 'resetApp':
             return initialState
-        case 'setEmployerProposal':
+        case 'setCurrentUserProposal':
             return {
                 ...state,
-                employerProposal: action.value,
-            }
-        case 'setEmployeeProposal':
-            return {
-                ...state,
-                employeeProposal: action.value,
+                [`${state.activeUser}Proposal`]: Number(action.value),
             }
         case 'setActiveUser':
             let val = action.value
